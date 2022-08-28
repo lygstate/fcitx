@@ -32,6 +32,10 @@
 #define GNOME_HELPER_PATH "/org/fcitx/GnomeHelper"
 #define GNOME_HELPER_INTERFACE "org.fcitx.GnomeHelper"
 
+#ifndef DBUS_TIMEOUT_USE_DEFAULT
+#  define DBUS_TIMEOUT_USE_DEFAULT (-1)
+#endif
+
 static void* FcitxXkbDBusCreate(struct _FcitxInstance* instance);
 static void FcitxXkbDBusDestroy(void* arg);
 static void FcitxXkbDBusHelperOwnerChanged(void* user_data, void* arg, const char* serviceName, const char* oldName, const char* newName);
